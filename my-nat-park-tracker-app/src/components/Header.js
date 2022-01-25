@@ -1,20 +1,17 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Search from './components/search'
-//import logo from "../images/crypto-call-logo-2.png"
-//import igLogo from "../images/ig-logo.png"
-//import twitterLogo from "../images/twitter-logo.png"
+import Search from './Search'
+
 
 function Header (){
    
     return(
         <div className="Header">
-            {/* <img id="cryptoCallLogo" src={logo} alt="crypto call logo"/> */}
+            <h1 id='appTitle'>National Parks</h1>
             <div className="pageLinks">
                 <Link id="homeButton" to='/'><button id="homeButton">Home</button></Link>
-                <Link><button>View Lists</button></Link>
-                <Link><button>Photo Gallery</button></Link>
-                {/* Search bar*/}
+                <Link id='viewListsButton' to='/listpage'><button id='viewListsButton'>View Lists</button></Link>
+                <Link id='photoGallery' to='/gallery'><button id='photoGallery'>Photo Gallery</button></Link>
             </div>   
             <Search />
         </div>
