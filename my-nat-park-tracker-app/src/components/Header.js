@@ -12,6 +12,7 @@ function Header (){
                 <Link id="homeButton" to='/'><button id="homeButton">Home</button></Link>
                 <Link id='viewListsButton' to='/listpage'><button id='viewListsButton'>View Lists</button></Link>
                 <Link id='photoGallery' to='/gallery'><button id='photoGallery'>Photo Gallery</button></Link>
+                <Link id='browsepage' to='/browsepage'><button id='browsePage'>Browse Parks</button></Link>
             </div>   
             <Search />
         </div>
