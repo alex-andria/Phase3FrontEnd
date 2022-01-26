@@ -1,12 +1,15 @@
 import React from 'react'
 
-function ParkDetailCard({parkName}) {
+function ParkDetailCard({parkName, parkDescription, parkImage}) {
 
     return (
         
             <div>
                 <li>
-                    <span className="parkName">{parkName}</span>
+                    <img className="parkImage" src={parkImage} alt={parkName}/><br />
+                    <span className="parkName">{parkName}</span><br />
+                    <span className="parkDescription">Description {parkDescription}</span><br />
+                    
                 </li>
             </div>
     )
