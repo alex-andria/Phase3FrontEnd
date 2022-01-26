@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import ListPage from './ListsPage';
-import ParkDetailCard from './ParkDetailCard';
+import ParkLearnMore from './ParkLearnMore';
 import BrowsePage from './BrowsePage';
 import { useEffect, useState } from 'react';
 // 
@@ -11,11 +11,27 @@ import 'leaflet/dist/leaflet.css';
 
 function HomePage(){
     const [allParksData, setParksData] = useState([])
+    const [allStatesData, setStatesData] = useState([])
+    const [allListsData, setAllListsData] = useState([])
     useEffect(()=> {
         fetch('http://localhost:9292/parks')
         .then(r => r.json())
         .then(setParksData)
     }, [])
+
+    useEffect(()=> {
+        fetch('http://localhost:9292/states')
+        .then(r => r.json())
+        .then(setStatesData)
+    }, [])
+
+    useEffect(()=> {
+        fetch('http://localhost:9292/lists')
+        .then(r => r.json())
+        .then(setAllListsData)
+    }, [])
+
+
     // useEffect(() => {
     //     // let current_lat = 37.625789;
     //     // let current_long = 95.0547899;
@@ -85,16 +101,20 @@ function HomePage(){
         <div className="HomePage">
             
             <Route exact path='/listpage'>
-                <ListPage/>
+                <ListPage allParksData={allParksData} allStatesData={allStatesData} allListsData={allListsData}/>
             </Route>
             <Route exact path='/'>
                 <h2 id='heading'>Featured National Park</h2>
                     <div id="map"></div>
             </Route>
-            <ParkDetailCard allParksData={allParksData}/>
 
             <Route exact path='/browsepage'>
-                <BrowsePage allParksData={allParksData} />
+                <BrowsePage allParksData={allParksData} allStatesData={allStatesData} allListsData={allListsData}/>
+            </Route>
+
+            <Route exact path='/parks/:id'>
+                <ParkLearnMore  allParksData={allParksData} allStatesData={allStatesData} allListsData={allListsData}
+                />
             </Route>
         </div>
     );
