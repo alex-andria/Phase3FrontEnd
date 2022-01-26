@@ -56,7 +56,6 @@ body{
 
 .Search input {
   text-align: left;
-  color: whitesmoke;
   font-size: medium;
   font-family: 'Spartan', sans-serif;
 }
@@ -65,3 +64,14 @@ body{
   cursor: pointer;
   color: #f7c7e1;
 }
+
+/* map start*/
+
+ #map {   
+  height: 350px;
+  position: relative;
+  width: 100%;
+}
+ 
+
+/* map end */
