@@ -2,18 +2,12 @@ import React from "react";
 import '../sarah.css'
 import { RiCloseLine } from "react-icons/ri";
 
+function ParkModal({ setIsOpen, onSubmit, onChange, formData, setStateID, allStatesData }) {
 
-
-
-function ParkModal({ setIsOpen, onSubmit, onChange, formData }) {
-
-    // console.log(formData)
-    // Based off the above console.log, we can see that as we type stuff into the form, it does populate the formData object- so at least that's working
     function closeModal(e) {
         e.preventDefault()
         setIsOpen(false);
     }
-
     
     return (
         <div>
@@ -36,10 +30,14 @@ function ParkModal({ setIsOpen, onSubmit, onChange, formData }) {
                         <input type='text' name='location' placeholder='Location' value={formData.location} onChange={onChange}></input>
                         <input type='text' name='states' placeholder='State' value={formData.states} onChange={onChange}></input>
                         <input type='text' name='website' placeholder='Website' value={formData.website} onChange={onChange}></input>
-                        <input type='text' name='state_id' placeholder='State Abbr' value={formData.state_id} onChange={onChange}></input>
+                        <br/>
+                        <select name='state_id' onChange={onChange}>
+                                <option value="All">Select Your State</option>
+                                {allStatesData.map(s => <option value={s.id}>{s.state_name}</option>)}
+                        </select>
                         <div className='modalActions'>
                             <div className='actionsContainer'>
-                                <button className='addBtn' onClick={closeModal} type='submit'>
+                                <button className='addBtn' type='submit'>
                                     Add Park
                                 </button>
                             <button

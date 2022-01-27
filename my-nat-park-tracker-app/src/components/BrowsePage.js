@@ -3,9 +3,7 @@ import ParkDetailCard from './ParkDetailCard'
 import ParkModal from './ParkModal'
 import '../sarah.css'
 
-
-
-function BrowsePage({allParksData, setAllParksData}) {
+function BrowsePage({allParksData, setAllParksData, allStatesData}) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -24,15 +22,10 @@ function BrowsePage({allParksData, setAllParksData}) {
         const value = e.target.value;
         setFormData({...formData, [key]:value})
     }
-    // let newPark = formData
-    // function onAddPark(newPark){
-    //     setAllParksData([...allParksData, newPark])
-    // }
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('new park trying to be added')
-        // The above console.log does not work
+        
 
         fetch('http://localhost:9292/parks', {
             method: 'POST',
@@ -41,30 +34,16 @@ function BrowsePage({allParksData, setAllParksData}) {
         }).then(res => res.json())
         .then((newPark) => {
             setAllParksData([newPark,...allParksData])
-            console.log('new park added')
         })
             
-            //history.push('/parks')
-            // setFormData({
-            //     park_name: "",
-            //     description: "",
-            //     fee: "",
-            //     image_url: "",
-            //     location: "",
-            //     states: "",
-            //     website: "",
-            //     state_id: "",
-            // });
         this.mainInput.value = "";
-        
     }
-    console.log(formData)
-    // Based off the above console.log, we can see that as we type stuff into the form, it does populate the formData object- so at least that's working
+    
     return (
         <div className='BrowsePage'>
             <h2 className='newPark'>Can't find your park?</h2>
             <button className='primaryBtn' onClick={()=> setIsOpen(true)}>+ Add New Park</button>
-            {isOpen && <ParkModal setIsOpen={setIsOpen} onSubmit={handleSubmit} onChange={handleChange} formData={formData}/>}
+            {isOpen && <ParkModal setIsOpen={setIsOpen} onSubmit={handleSubmit} onChange={handleChange} formData={formData}  allStatesData={allStatesData}/>}
             <h2 className='BrowseParks'>Browse Parks</h2>
             <ul id = "ParkInfo">
                 {allParksData.map((parkData) =>
