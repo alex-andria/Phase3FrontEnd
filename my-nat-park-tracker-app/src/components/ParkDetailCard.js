@@ -4,11 +4,11 @@ function ParkDetailCard({parkName, parkDescription, parkImage}) {
 
     return (
         
-            <div>
+            <div id='parkDetails'>
                 <li>
                     <img className="parkImage" src={parkImage} alt={parkName}/><br />
                     <span className="parkName">{parkName}</span><br />
-                    <span className="parkDescription">Description {parkDescription}</span><br />
+                    <span className="parkDescription"> {parkDescription}</span><br />
                     
                 </li>
             </div>

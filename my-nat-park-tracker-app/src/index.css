@@ -23,7 +23,7 @@ body{
 }
 #heading{
   font-family: 'Spartan', sans-serif;
-  padding-left: 50px;
+  padding-left: 30px;
 }
 .pageLinks button{
   position: relative;
@@ -64,6 +64,7 @@ body{
   cursor: pointer;
   color: #f7E5D4C0;
 }
+
 
 /* map start*/
 
