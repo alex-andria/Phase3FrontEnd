@@ -1,1 +1,229 @@
 /* HomePage,  Create New(on Browse Parks)*/
+.darkBG{
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+  
+.centered{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.modal{
+    width: 400px;
+    height: 300px;
+    background: white;
+    color: white;
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+  
+.modalHeader{
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+  
+.heading{
+    margin: 0;
+    padding: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+  
+.modalContent{
+    padding: 10px;
+    font-size: 14px;
+    color: #2c3e50;
+    text-align: center;
+}
+  
+.modalActions{
+    position: absolute;
+    bottom: 2px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+  
+.actionsContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+  
+.closeBtn{
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-self: flex-end;
+    margin-top: -7px;
+    margin-right: -7px;
+}
+  
+.closeBtn:hover{
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(-4px, 4px);
+}
+  
+.addBtn{
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: none;
+    color: #fff;
+    background: #5D9271;
+    transition: all 0.25s ease;
+}
+  
+.addBtn:hover{
+    box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+    transform: translateY(-5px);
+    background: #294936;
+}
+  
+.cancelBtn{
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: none;
+    color: #2c3e50;
+    background: #E5D4C0;
+    transition: all 0.25s ease;
+}
+  
+.cancelBtn:hover{
+    box-shadow: none;
+    transform: none;
+    background: #F3EBE2;
+}
+.primaryBtn{
+    margin: 20px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    background: #5D9271;
+    transition: all 0.25s ease;
+}
+  
+.primaryBtn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+}
+#featuredPark{
+    list-style-type: none;
+    padding-left: 2vh;
+    background-color: whitesmoke;
+    margin-left: 2vh;
+    padding-top: 2vh;
+    margin-right: 2vh;
+    max-width: 850px;
+    border-radius: 15px;
+    padding-bottom: 2vh;
+    position: relative;
+
+}
+
+#featuredPark .parkImage{
+    width: 830px;
+    max-height: auto;
+    border-radius: 15px;
+    margin-bottom: 1vh;
+    z-index: 6;
+}
+#featuredPark .parkName{
+    color: whitesmoke;
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    font-weight: bold;
+    font-size: 150%;
+    z-index: 7;
+
+}
+#featuredPark .parkDescription{
+    max-width: 830px;
+    padding-top: 1vh;
+}
+ #nextAdventure{
+    padding-left: 5vh;
+    display: inline-block;
+    width: auto;
+    max-height: 300px;
+}
+
+#Adventure .parkImage{
+    padding: 1vh;
+    width: auto;
+    max-height: 250px;
+    background: whitesmoke;
+    border-radius: 10px;
+    margin-left: 2vh;
+    z-index: 6;
+
+} 
+#Adventure .parkName{
+    position: absolute;
+    padding: 4vh;
+    bottom: 2vh;
+    z-index:7;
+    color: whitesmoke;
+    font-weight: bold;
+}
+.nextAdventureParks{
+    list-style-type: none;
+    display:flex;
+    position: relative;
+}
+#ParkInfo{
+    list-style-type: none;
+    display: inline-block;
+
+}
+#ParkInfo .parkImage{
+    max-width: 400px;
+    height: auto;
+}
+
+#ParkInfo .parkDescription{
+    padding-right: 2vh;
+    width: 830px;
+}
+.BrowseParks{
+    padding-left: 4vh;
+}
+.newPark{
+    padding-left: 4vh;
+} 
