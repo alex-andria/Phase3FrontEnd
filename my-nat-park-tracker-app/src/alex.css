@@ -1,1 +1,85 @@
 /* ParkLearnMore, front end for lists */
+
+/* START Park Learn More */
+
+.learnMoreCard { 
+    width: 1000px; 
+    min-height: 100px; 
+    margin-top: 50px; 
+    margin-left: auto; 
+    margin-right: auto;   
+  
+    background: #ffff;
+    padding: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    list-style-type: none;
+}
+
+#learnMoreCard .parkImage{
+    width: 1000px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.header {
+    font-style: sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #466060;
+}
+
+.addParkButton{
+    float: right;
+    background-color: #5D9271;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+.textGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: black;
+  }
+
+#listPage{
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+/* #listPage .parkImage{
+    max-width: 100%;
+    height: auto;
+} */
+
+#listPage .parkDescription{
+    padding-right: 2vh;
+    width: 830px;
+}
+
+/* END - Park Learn More */
+
+/* START Browse Page */
+.parkDetailsContainer{
+    width: 1000px; 
+    min-height: 100px; 
+    margin-top: 50px; 
+    margin-left: auto; 
+    margin-right: auto;   
+  
+    background: #ffff;
+    padding: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+
+.searchBar{
+    margin-top: 3px;
+    text-align: right;
+}
+
+/* END Browse Page */
